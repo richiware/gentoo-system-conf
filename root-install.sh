@@ -13,7 +13,7 @@ cp "$PWD/etc/systemd/system/sysinit.target.wants/decrypt-hdd-disk.service" /etc/
 cp "$PWD/etc/udev/rules.d/60-ssd-scheduler.rules" /etc/udev/rules.d/
 
 #Install redirection of user .cache
-cp "$PWD/etc/profile.d/xdg_cache_home.sh" /etc/profile.d/
+cp "$PWD/etc/systemd/user/xdg-cache-home.service" /etc/systemd/user/
 
 #Copy tmpfs-ccache files.
 cp "$PWD/thirdparty/tmpfs-ccache/etc/tmpfs-ccache" /etc/

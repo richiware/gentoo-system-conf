@@ -1,0 +1,9 @@
+[Unit]
+Description=Set XDG_CACHE_HOME environment variable
+
+[Service]
+ExecStart=/bin/sh -c "dbus-update-activation-environment --systemd XDG_CACHE_HOME=/var/cache/users/%u/.cache"
+#ExecStart=/bin/sh -c "systemctl --user set-environment XDG_CACHE_HOME=/var/cache/users/%u/.cache"
+
+[Install]
+WantedBy=default.target
