@@ -1,3 +1,6 @@
 [submodule "thirdparty/tmpfs-ccache"]
 	path = thirdparty/tmpfs-ccache
 	url = https://github.com/richiware/tmpfs-ccache.git
+[submodule "thirdparty/squash-portage"]
+	path = thirdparty/squash-portage
+	url = https://github.com/richiware/squash-portage.git
