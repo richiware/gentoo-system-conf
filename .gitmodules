@@ -4,3 +4,6 @@
 [submodule "thirdparty/squash-portage"]
 	path = thirdparty/squash-portage
 	url = https://github.com/richiware/squash-portage.git
+[submodule "thirdparty/gnome-terminal-colors-solarized"]
+	path = thirdparty/gnome-terminal-colors-solarized
+	url = https://github.com/richiware/gnome-terminal-colors-solarized.git
