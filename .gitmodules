@@ -7,3 +7,6 @@
 [submodule "thirdparty/gnome-terminal-colors-solarized"]
 	path = thirdparty/gnome-terminal-colors-solarized
 	url = https://github.com/richiware/gnome-terminal-colors-solarized.git
+[submodule "thirdparty/dircolors-solarized"]
+	path = thirdparty/dircolors-solarized
+	url = https://github.com/richiware/dircolors-solarized
