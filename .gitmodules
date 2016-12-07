@@ -6,7 +6,10 @@
 	url = https://github.com/richiware/squash-portage.git
 [submodule "thirdparty/gnome-terminal-colors-solarized"]
 	path = thirdparty/gnome-terminal-colors-solarized
-	url = https://github.com/richiware/gnome-terminal-colors-solarized.git
+	url = https://github.com/Anthony25/gnome-terminal-colors-solarized.git
 [submodule "thirdparty/dircolors-solarized"]
 	path = thirdparty/dircolors-solarized
-	url = https://github.com/richiware/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized
+[submodule "thirdparty/powerline"]
+	path = thirdparty/powerline
+	url = https://github.com/powerline/powerline.git
