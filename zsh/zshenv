@@ -1,0 +1,21 @@
+# Aliases
+alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER_LAUNCHER=ccache'
+alias :q='exit'
+
+# CCache
+emulate -R bash -c 'source /usr/local/bin/tmpfs-ccache-user.sh'
+
+# FZF
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# GCC_COLORS
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Make
+NUMCPUS=`grep -c '^processor' /proc/cpuinfo`
+NUMCPUS_JOBS=$(( $NUMCPUS - 1))
+NUMCPUS_LOAD=$(( $NUMCPUS - 2)).8
+export MAKEFLAGS="-j${NUMCPUS_JOBS} -l${NUMCPUS_LOAD}"
+  # Variable used in CMake to pass through other project the MAKEFLAGS
+export CMAKE_MAKEFLAGS=$MAKEFLAGS

@@ -21,3 +21,7 @@ mkdir -p ~/.config/nvim && ln -s "$PWD/thirdparty/vim-conf/init.vim" ~/.config/n
 # Install tmux configuration
 ln -s "$PWD/tmux/tmux.conf" ~/.tmux.conf
 ln -s "$PWD/tmux/tmux.desktop" ~/.local/share/applications/tmux.desktop
+
+# Install zsh configuration
+ln -s "$PWD/zsh/zshenv" ~/.zshenv
+ln -s "$PWD/zsh/zshrc" ~/.zshrc
