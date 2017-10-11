@@ -12,6 +12,9 @@ cp "$PWD/etc/systemd/system/sysinit.target.wants/decrypt-hdd-disk.service" /etc/
 #Install udev rules for ssh scheduler
 cp "$PWD/etc/udev/rules.d/60-ssd-scheduler.rules" /etc/udev/rules.d/
 
+#Install fstrim service for ssh disk.
+cp "$PWD/etc/systemd/system/fstrim.service" /etc/systemd/system/
+
 #Install redirection of user .cache
 cp "$PWD/etc/systemd/user/xdg-cache-home.service" /etc/systemd/user/
 
