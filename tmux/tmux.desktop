@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Tmux
+Comment=Open tmux from Gnome shell
+Exec=tmux
+Icon=utilities-terminal
+Terminal=true
+Type=Application
+Categories=TerminalEmulator;
+Keywords=shell;prompt;command;commandline;cmd;
+Keywords[es]=shell;prompt;comando;línea de comandos;cmd;

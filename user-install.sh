@@ -17,3 +17,7 @@ echo "Execute thirdparty/gnome-terminal-colors-solarized/install.sh"
 # Install vim files
 ln -s "$PWD/thirdparty/vim-conf" ~/.vim
 mkdir -p ~/.config/nvim && ln -s "$PWD/thirdparty/vim-conf/init.vim" ~/.config/nvim/init.vim
+
+# Install tmux configuration
+ln -s "$PWD/tmux/tmux.conf" ~/.tmux.conf
+ln -s "$PWD/tmux/tmux.desktop" ~/.local/share/applications/tmux.desktop
