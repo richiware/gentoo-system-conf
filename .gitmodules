@@ -13,3 +13,6 @@
 [submodule "thirdparty/powerline"]
 	path = thirdparty/powerline
 	url = https://github.com/powerline/powerline.git
+[submodule "thirdparty/vim-conf"]
+	path = thirdparty/vim-conf
+	url = https://github.com/richiware/vim-conf.git
