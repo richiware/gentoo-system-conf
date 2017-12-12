@@ -1,18 +1,30 @@
 [submodule "thirdparty/tmpfs-ccache"]
-	path = thirdparty/tmpfs-ccache
-	url = https://github.com/richiware/tmpfs-ccache.git
+    path = thirdparty/tmpfs-ccache
+    url = https://github.com/richiware/tmpfs-ccache.git
+    branch = master
+    shallow = true
 [submodule "thirdparty/squash-portage"]
-	path = thirdparty/squash-portage
-	url = https://github.com/richiware/squash-portage.git
+    path = thirdparty/squash-portage
+    url = https://github.com/richiware/squash-portage.git
+    branch = master
+    shallow = true
 [submodule "thirdparty/gnome-terminal-colors-solarized"]
-	path = thirdparty/gnome-terminal-colors-solarized
-	url = https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+    path = thirdparty/gnome-terminal-colors-solarized
+    url = https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+    branch = master
+    shallow = true
 [submodule "thirdparty/dircolors-solarized"]
-	path = thirdparty/dircolors-solarized
-	url = https://github.com/seebi/dircolors-solarized
+    path = thirdparty/dircolors-solarized
+    url = https://github.com/seebi/dircolors-solarized
+    branch = master
+    shallow = true
 [submodule "thirdparty/powerline"]
-	path = thirdparty/powerline
-	url = https://github.com/powerline/powerline.git
+    path = thirdparty/powerline
+    url = https://github.com/powerline/powerline.git
+    branch = master
+    shallow = true
 [submodule "thirdparty/vim-conf"]
-	path = thirdparty/vim-conf
-	url = https://github.com/richiware/vim-conf.git
+    path = thirdparty/vim-conf
+    url = https://github.com/richiware/vim-conf.git
+    branch = master
+    shallow = true
