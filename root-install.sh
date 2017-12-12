@@ -39,7 +39,3 @@ cp "$PWD/thirdparty/squash-portage/squash-portage.sh" /usr/local/bin/
 #Show message about crontab and interrupt gpe12
 echo 'Execute "crontab -e" and add next line:'
 echo '    @reboot echo "disable" > /sys/firmware/acpi/interrupts/gpe12'
-
-# Install powerline
-echo 'Install powerline:'
-echo '    pip install --user powerline-status'

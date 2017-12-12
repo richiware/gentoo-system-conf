@@ -19,9 +19,14 @@ fi
 ln -s "$PWD/thirdparty/dircolors-solarized/dircolors.256dark" ~/.dircolors
 
 #Show message about gnome-terminal-colors-solarized
-echo "Executing thirdparty/gnome-terminal-colors-solarized/install.sh"
+echo "Executing thirdparty/gnome-terminal-colors-solarized/install.sh ..."
 read -t 10
 sh -c "$PWD/thirdparty/gnome-terminal-colors-solarized/install.sh"
+
+# Install powerline
+echo 'Installing powerline...'
+read -t 10
+pip install --user powerline-status
 
 # Install vim files
 ln -s "$PWD/thirdparty/vim-conf" ~/.vim
@@ -36,16 +41,16 @@ ln -s "$PWD/zsh/zshenv" ~/.zshenv
 ln -s "$PWD/zsh/zshrc" ~/.zshrc
 
 # Execute taskwarrior to create config file
-echo "Creating configuration for taskwarrior"
+echo "Creating configuration for taskwarrior..."
 read -t 10
 task list
 
 # Install bugwarrior
 cp "$PWD/bugwarrior/bugwarriorrc" ~/.bugwarriorrc
-echo "Include redmine key in ~/.bugwarriorrc"
+echo "Include redmine key in ~/.bugwarriorrc ..."
 read -t 10
 vim ~/.bugwarriorrc
-echo "Include bugwarrior as cron job: add '0 8 * * * /usr/bin/bugwarrior-pull'"
+echo "Include bugwarrior as cron job: add '0 8 * * * /usr/bin/bugwarrior-pull' ..."
 read -t 10
 sudo crontab -u $USER -e
 
@@ -55,7 +60,7 @@ cp "$PWD/thirdparty/taskwarrior-hamster-hook/on-modify.hamster" ~/.task/hooks/
 # Install redminetimesync
 cp "$PWD/thirdparty/redminetimesync/activities.config.tpl" "$PWD/thirdparty/redminetimesync/activities.config"
 cp "$PWD/thirdparty/redminetimesync/redminetimesync.config.tpl" "$PWD/thirdparty/redminetimesync/redminetimesync.config"
-echo "Include redmine key in redminetimesync.config"
+echo "Include redmine key in redminetimesync.config ..."
 read -t 10
 vim "$PWD/thirdparty/redminetimesync/redminetimesync.config"
 
