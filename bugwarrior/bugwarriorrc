@@ -1,5 +1,5 @@
 [general]
-targets = sprints
+targets = redmine
 log.level = INFO
 log.file = /tmp/bugwarrior.log
 multiprocessing = True
@@ -7,10 +7,11 @@ multiprocessing = True
 [notifications]
 notifications = False
 
-[sprints]
+[redmine]
 service = redmine
 redmine.url = http://redmine.sambaserver.eprosima.com
 redmine.key = REDMINE-KEY
 redmine.user_id = 8
-redmine.project_name = sprints
-add_tags = eProsima
+redmine.project_name = eProsima
+redmine.issue_limit = 1000
+redmine.only_if_assigned = True
