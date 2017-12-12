@@ -33,3 +33,8 @@
     url = https://github.com/cinatic/taskwhisperer.git
     branch = master
     shallow = true
+[submodule "thirdparty/redminetimesync"]
+    path = thirdparty/redminetimesync
+    url = https://github.com/richiware/redminetimesync.git
+    branch = master
+    shallow = true
