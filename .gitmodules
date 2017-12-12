@@ -38,3 +38,7 @@
     url = https://github.com/richiware/redminetimesync.git
     branch = master
     shallow = true
+[submodule "thirdparty/taskwarrior-hamster-hook"]
+	path = thirdparty/taskwarrior-hamster-hook
+	url = https://github.com/richiware/taskwarrior-hamster-hook.git
+	branch = master

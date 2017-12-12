@@ -36,6 +36,8 @@ ln -s "$PWD/zsh/zshenv" ~/.zshenv
 ln -s "$PWD/zsh/zshrc" ~/.zshrc
 
 # Execute taskwarrior to create config file
+echo "Creating configuration for taskwarrior"
+read -t 10
 task list
 
 # Install bugwarrior
@@ -43,6 +45,9 @@ cp "$PWD/bugwarrior/bugwarriorrc" ~/.bugwarriorrc
 echo "Include redmine key in ~/.bugwarriorrc"
 read -t 10
 vim ~/.bugwarriorrc
+
+# Install taskwarrior hook
+cp "$PWD/thirdparty/taskwarrior-hamster-hook/on-modify.hamster" ~/.task/hooks/
 
 # Install redminetimesync
 cp "$PWD/thirdparty/redminetimesync/activities.config.tpl" "$PWD/thirdparty/redminetimesync/activities.config"
