@@ -45,6 +45,9 @@ cp "$PWD/bugwarrior/bugwarriorrc" ~/.bugwarriorrc
 echo "Include redmine key in ~/.bugwarriorrc"
 read -t 10
 vim ~/.bugwarriorrc
+echo "Include bugwarrior as cron job: add '0 8 * * * /usr/bin/bugwarrior-pull'"
+read -t 10
+sudo crontab -u $USER -e
 
 # Install taskwarrior hook
 cp "$PWD/thirdparty/taskwarrior-hamster-hook/on-modify.hamster" ~/.task/hooks/
