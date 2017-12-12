@@ -6,6 +6,15 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
+#TODO Detect sudo app
+
+#TODO Layman
+
+#TODO My local portage
+
+#TODO Emerge task, thefuck, hamster-time-tracker
+
+
 #Install systemd scripts for decrypt HDD.
 cp "$PWD/etc/systemd/system/sysinit.target.wants/decrypt-hdd-disk.service" /etc/systemd/system/sysinit.target.wants/
 

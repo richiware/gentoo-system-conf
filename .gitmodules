@@ -28,3 +28,8 @@
     url = https://github.com/richiware/vim-conf.git
     branch = master
     shallow = true
+[submodule "thirdparty/taskwhisperer"]
+    path = thirdparty/taskwhisperer
+    url = https://github.com/cinatic/taskwhisperer.git
+    branch = master
+    shallow = true
