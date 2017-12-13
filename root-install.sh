@@ -12,7 +12,7 @@ fi
 
 #TODO My local portage
 
-#TODO Emerge syslog-ng vixie-cron logrotate task, thefuck, hamster-time-tracker
+#TODO Emerge zathura texlive neovim ranger syslog-ng vixie-cron logrotate task, thefuck, hamster-time-tracker
 
 
 #Install systemd scripts for decrypt HDD.

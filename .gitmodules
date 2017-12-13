@@ -39,6 +39,12 @@
     branch = master
     shallow = true
 [submodule "thirdparty/taskwarrior-hamster-hook"]
-	path = thirdparty/taskwarrior-hamster-hook
-	url = https://github.com/richiware/taskwarrior-hamster-hook.git
-	branch = master
+    path = thirdparty/taskwarrior-hamster-hook
+    url = https://github.com/richiware/taskwarrior-hamster-hook.git
+    branch = master
+    shallow = true
+[submodule "thirdparty/gnome-shell-remove-dropdown-arrows"]
+    path = thirdparty/gnome-shell-remove-dropdown-arrows
+    url = https://github.com/mpdeimos/gnome-shell-remove-dropdown-arrows.git
+    branch = master
+    shallow = true
