@@ -69,3 +69,7 @@ ln -s "$PWD/thirdparty/taskwhisperer" ~/.local/share/gnome-shell/extensions/task
 
 # Install remove arrow gnome extension
 ln -s "$PWD/thirdparty/gnome-shell-remove-dropdown-arrows" ~/.local/share/gnome-shell/extensions/remove-dropdown-arrows@mpdeimos.com
+
+# Install text translator gnome extension
+
+ln -s "$PWD/thirdparty/text-translator" ~/.local/share/gnome-shell/extensions/text_translator@awamper.gmail.com

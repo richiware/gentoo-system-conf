@@ -48,3 +48,6 @@
     url = https://github.com/mpdeimos/gnome-shell-remove-dropdown-arrows.git
     branch = master
     shallow = true
+[submodule "thirdparty/text-translator"]
+	path = thirdparty/text-translator
+	url = https://github.com/gufoe/text-translator.git
