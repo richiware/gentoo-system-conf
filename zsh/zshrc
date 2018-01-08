@@ -45,7 +45,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitignore vi-mode vim-interaction)
+plugins=(git gitignore thefuck vi-mode vim-interaction)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,3 +131,5 @@ bindkey "^[OA" up-line-or-local-history
 bindkey "^[OB" down-line-or-local-history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey "\e\e" fuck-command-line
