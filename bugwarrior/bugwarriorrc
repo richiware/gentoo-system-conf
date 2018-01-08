@@ -9,7 +9,7 @@ notifications = False
 
 [redmine]
 service = redmine
-redmine.url = http://redmine.sambaserver.eprosima.com
+redmine.url = https://eprosima.easyredmine.com
 redmine.key = REDMINE-KEY
 redmine.user_id = 8
 redmine.project_name = eProsima
