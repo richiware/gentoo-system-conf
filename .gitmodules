@@ -51,3 +51,6 @@
 [submodule "thirdparty/text-translator"]
 	path = thirdparty/text-translator
 	url = https://github.com/gufoe/text-translator.git
+[submodule "thirdparty/gnome3-jenkins-indicator"]
+	path = thirdparty/gnome3-jenkins-indicator
+	url = https://github.com/philipphoffmann/gnome3-jenkins-indicator.git
