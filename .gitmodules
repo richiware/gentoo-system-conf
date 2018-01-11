@@ -49,8 +49,12 @@
     branch = master
     shallow = true
 [submodule "thirdparty/text-translator"]
-	path = thirdparty/text-translator
-	url = https://github.com/gufoe/text-translator.git
+    path = thirdparty/text-translator
+    url = https://github.com/gufoe/text-translator.git
+    branch = master
+    shallow = true
 [submodule "thirdparty/gnome3-jenkins-indicator"]
-	path = thirdparty/gnome3-jenkins-indicator
-	url = https://github.com/philipphoffmann/gnome3-jenkins-indicator.git
+    path = thirdparty/gnome3-jenkins-indicator
+    url = https://github.com/philipphoffmann/gnome3-jenkins-indicator.git
+    branch = master
+    shallow = true
