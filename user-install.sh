@@ -35,6 +35,8 @@ mkdir -p ~/.config/nvim && ln -s "$PWD/thirdparty/vim-conf/init.vim" ~/.config/n
 # Install tmux configuration
 ln -s "$PWD/tmux/tmux.conf" ~/.tmux.conf
 ln -s "$PWD/tmux/tmux.desktop" ~/.local/share/applications/tmux.desktop
+mkdir -p ~/.config/powerline/themes/tmux
+ln -s "$PWD/tmux/default.json" ~/.config/powerline/themes/tmux/
 
 # Install zsh configuration
 ln -s "$PWD/zsh/zshenv" ~/.zshenv
