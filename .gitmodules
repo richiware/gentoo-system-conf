@@ -58,3 +58,6 @@
     url = https://github.com/philipphoffmann/gnome3-jenkins-indicator.git
     branch = master
     shallow = true
+[submodule "thirdparty/zsh-notify"]
+	path = thirdparty/zsh-notify
+	url = https://github.com/richiware/zsh-notify.git

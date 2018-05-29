@@ -77,3 +77,8 @@ ln -s "$PWD/thirdparty/text-translator" ~/.local/share/gnome-shell/extensions/te
 
 # Install jenkins indicator gnome extension
 ln -s "$PWD/thirdparty/gnome3-jenkins-indicator" ~/.local/share/gnome-shell/extensions/jenkins-indicator@philipphoffmann.de
+
+# Install oh-my-zsh and zsh-notify plugin
+# TODO Install oh-my-zsh
+sudo emerge -va xdotool
+ln -s "$PWD/thirdparty/zsh-notify" ~/.oh-my-zsh/custom/plugin/notify
