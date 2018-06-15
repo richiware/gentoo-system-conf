@@ -1,5 +1,5 @@
 # Aliases
-alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER_LAUNCHER=ccache'
+alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_FLAGS="-fdebug-prefix-map=\${CMAKE_SOURCE_DIR}=."'
 alias :q='exit'
 
 # CCache
