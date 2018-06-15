@@ -79,12 +79,16 @@ ln -s "$PWD/thirdparty/zsh-notify" ~/.oh-my-zsh/custom/plugin/notify
 
 # Install email, contacts
 ## Install vdirsyncer
-applications_to_merge="$applications_to_merge vdirsyncer"
+applications_to_merge="$applications_to_merge requests-oauthlib vdirsyncer"
 mkdir "~/.vdirsyncer"
 cp "$PWD/vdirsyncer/config" ~/.vdirsyncer/
 sudo cp "$PWD/vdirsyncer/vdirsyncer.service" /etc/systemd/user
 sudo cp "$PWD/vdirsyncer/vdirsyncer.timer" /etc/systemd/user
 systemctl --user enable vdirsyncer.timer
+## Install khard
+applications_to_merge="$applications_to_merge khard"
+mkdir ~/.config/khard/
+ln -s "$PWD/khard/khard.conf" ~/.config/khard/khard.conf
 
 # Solarized colors in terminal
 ln -s "$PWD/thirdparty/dircolors-solarized/dircolors.256dark" ~/.dircolors
