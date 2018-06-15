@@ -61,3 +61,6 @@
 [submodule "thirdparty/zsh-notify"]
 	path = thirdparty/zsh-notify
 	url = https://github.com/richiware/zsh-notify.git
+[submodule "thirdparty/gmail-oauth2-tools"]
+	path = thirdparty/gmail-oauth2-tools
+	url = https://github.com/google/gmail-oauth2-tools

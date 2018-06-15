@@ -89,6 +89,9 @@ systemctl --user enable vdirsyncer.timer
 applications_to_merge="$applications_to_merge khard"
 mkdir ~/.config/khard/
 ln -s "$PWD/khard/khard.conf" ~/.config/khard/khard.conf
+## Install offlineimap
+applications_to_merge="$applications_to_merge offlineimap"
+cp "$PWD/offlineimap/offlineimaprc" ~/.offlineimaprc
 
 # Solarized colors in terminal
 ln -s "$PWD/thirdparty/dircolors-solarized/dircolors.256dark" ~/.dircolors
@@ -151,3 +154,7 @@ echo '    @reboot echo "disable" > /sys/firmware/acpi/interrupts/gpe12'
 echo 'vdirsyncer: create google credentials and execute:'
 echo '    vdirsyncer discover'
 echo '    vdirsyncer metasync'
+#show message for offlineimap
+echo 'offlineimap: create google credentials and execute:'
+echo '    offlineimap -o'
+echo '    Follow instructions of https://hobo.house/2017/07/17/using-offlineimap-with-the-gmail-imap-api/
