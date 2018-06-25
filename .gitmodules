@@ -13,11 +13,6 @@
     url = https://github.com/Anthony25/gnome-terminal-colors-solarized.git
     branch = master
     shallow = true
-[submodule "thirdparty/dircolors-solarized"]
-    path = thirdparty/dircolors-solarized
-    url = https://github.com/seebi/dircolors-solarized
-    branch = master
-    shallow = true
 [submodule "thirdparty/powerline"]
     path = thirdparty/powerline
     url = https://github.com/powerline/powerline.git
@@ -64,3 +59,6 @@
 [submodule "thirdparty/gmail-oauth2-tools"]
 	path = thirdparty/gmail-oauth2-tools
 	url = https://github.com/google/gmail-oauth2-tools
+[submodule "thirdparty/email-conf"]
+	path = thirdparty/email-conf
+	url = https://github.com/richiware/email-conf.git
