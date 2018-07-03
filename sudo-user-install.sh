@@ -68,6 +68,7 @@ ln -s "$PWD/thirdparty/taskwhisperer" ~/.local/share/gnome-shell/extensions/task
 ln -s "$PWD/thirdparty/gnome-shell-remove-dropdown-arrows" ~/.local/share/gnome-shell/extensions/remove-dropdown-arrows@mpdeimos.com
 ## Install text translator gnome extension
 applications_to_merge="$applications_to_merge translate-shell"
+ln -s "$PWD/translate-shell" ~/.config/translate-shell
 ln -s "$PWD/thirdparty/text-translator" ~/.local/share/gnome-shell/extensions/text_translator@awamper.gmail.com
 ## Install jenkins indicator gnome extension
 ln -s "$PWD/thirdparty/gnome3-jenkins-indicator" ~/.local/share/gnome-shell/extensions/jenkins-indicator@philipphoffmann.de
@@ -78,26 +79,49 @@ applications_to_merge="$applications_to_merge xdotool"
 ln -s "$PWD/thirdparty/zsh-notify" ~/.oh-my-zsh/custom/plugin/notify
 
 # Install email, contacts
+sudo mkdir /var/spool/richi_mail
+sudo chown ricardo:ricardo /var/spool/richi_mail
+ln -s /var/spool/richi_mail ~/.mail
 ## Install vdirsyncer
 applications_to_merge="$applications_to_merge requests-oauthlib vdirsyncer"
 mkdir "~/.vdirsyncer"
-cp "$PWD/vdirsyncer/config" ~/.vdirsyncer/
-sudo cp "$PWD/vdirsyncer/vdirsyncer.service" /etc/systemd/user
-sudo cp "$PWD/vdirsyncer/vdirsyncer.timer" /etc/systemd/user
+ln -s "$PWD/thirdparty/email-conf/vdirsyncer/config" ~/.vdirsyncer/config
+sudo cp "$PWD/thirdparty/email-conf/vdirsyncer/vdirsyncer.service" /etc/systemd/user
+sudo cp "$PWD/thirdparty/email-conf/vdirsyncer/vdirsyncer.timer" /etc/systemd/user
 systemctl --user enable vdirsyncer.timer
 ## Install khard
 applications_to_merge="$applications_to_merge khard"
 mkdir ~/.config/khard/
-ln -s "$PWD/khard/khard.conf" ~/.config/khard/khard.conf
+ln -s "$PWD/thirdparty/email-conf/khard/khard.conf" ~/.config/khard/khard.conf
 ## Install offlineimap
-applications_to_merge="$applications_to_merge offlineimap"
-cp "$PWD/offlineimap/offlineimaprc" ~/.offlineimaprc
-
-# Solarized colors in terminal
-ln -s "$PWD/thirdparty/dircolors-solarized/dircolors.256dark" ~/.dircolors
+applications_to_merge="$applications_to_merge offlineimap keyring"
+ln -s "$PWD/thirdparty/email-conf/offlineimap/offlineimaprc" ~/.offlineimaprc
+mkdir ~/.mail/offlineimap
+ln -s "$PWD/thirdparty/email-conf/offlineimap/gnome-keyring-query.py" ~/.mail/offlineimap/gnome-keyring-query.py
+sudo cp "$PWD/thirdparty/email-conf/offlineimap/offlineimap-oneshot.*" /etc/systemd/user
+systemctl --user enable offlineimap-oneshot.timer
+## Install notmuch
+applications_to_merge="$applications_to_merge notmuch"
+ln -s "$PWD/thirdparty/email-conf/notmuch/notmuch-config" ~/.notmuch-config
+## Install notifymuch
+pip3 install --user thirdparty/email-conf/thirdparty/notifymuch/
+mkdir ~/.mail/mail/.notmuch
+ln -s "$PWD/thirdparty/email-conf/notmuch/hooks" ~/.mail/mail/.notmuch/hooks
+## Install msmtp
+applications_to_merge="$applications_to_merge msmtp"
+ln -s "$PWD/thirdparty/email-conf/msmtp/msmtprc" ~/.msmtprc
+## Install mutt
+applications_to_merge="$applications_to_merge mutt muttprint t-prot w3m extract_url"
+mkdir ~/.mail/cache/headers
+mkdir ~/.mail/cache/bodies
+ln -s "$PWD/thirdparty/email-conf/mutt/muttrc" ~/.muttrc
+ln -s "$PWD/thirdparty/email-conf/mutt/config" ~/.mutt
+ln -s "$PWD/thirdparty/email-conf/mutt/extract_urlview" ~/.extract_urlview
+ln -s "$PWD/thirdparty/email-conf/mutt/mutt-html-attach" ~/.local/bin/mutt-html-attach
 
 #Show message about gnome-terminal-colors-solarized
 echo "Executing thirdparty/gnome-terminal-colors-solarized/install.sh ..."
+echo "    Note: remember this package can install also .dircolors"
 read -t 10
 sh -c "$PWD/thirdparty/gnome-terminal-colors-solarized/install.sh"
 
@@ -151,10 +175,32 @@ echo 'Execute "crontab -e" and add next line:'
 echo '    @reboot echo "disable" > /sys/firmware/acpi/interrupts/gpe12'
 
 #Show message for vdirsyncer
+echo 'vdirsyncer: store credentials in Gnome Keyring using python:'
+echo '    python'
+echo '    >>> import keyring'
+echo '    >>> keyring.set_password("vdirsyncer", "personal_client_id" ,"[client_id]")'
+echo '    >>> keyring.set_password("vdirsyncer", "personal_client_secret", "[client_secret]")'
+echo '    >>> quit()'
 echo 'vdirsyncer: create google credentials and execute:'
 echo '    vdirsyncer discover'
 echo '    vdirsyncer metasync'
 #show message for offlineimap
-echo 'offlineimap: create google credentials and execute:'
+echo 'offlineimap: create google app password for offlineimap and msmtp.'
+echo 'offlineimap: store credentials in Gnome Keyring using python:'
+echo '    python'
+echo '    >>> import keyring'
+echo '    >>> keyring.set_password("personal_gmail", "password" ,"[password]")'
+echo '    >>> quit()'
+#echo 'offlineimap: create google credentials following instructions on:'
+#echo '    https://hobo.house/2017/07/17/using-offlineimap-with-the-gmail-imap-api/'
+#echo 'offlineimap: store credentials in Gnome Keyring using python:'
+#echo '    python'
+#echo '    >>> import keyring'
+#echo '    >>> keyring.set_password("offlineimap", "personal_client_id" ,"[client_id]")'
+#echo '    >>> keyring.set_password("offlineimap", "personal_client_secret", "[client_secret]")'
+#echo '    >>> keyring.set_password("offlineimap", "personal_refresh_token", "[refresh_token]")'
+#echo '    >>> quit()'
+echo 'offlineimap: first execution of offlineimap:'
 echo '    offlineimap -o'
-echo '    Follow instructions of https://hobo.house/2017/07/17/using-offlineimap-with-the-gmail-imap-api/
+echo 'msmtp: store credentials in Gnome Keyring using python:'
+echo '    secret-tool store --label=msmtp host smtp.gmail.com service smtp user correoricky@gmail.com'
