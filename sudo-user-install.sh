@@ -76,7 +76,8 @@ ln -s "$PWD/thirdparty/gnome3-jenkins-indicator" ~/.local/share/gnome-shell/exte
 # Install oh-my-zsh and zsh-notify plugin
 # TODO Install oh-my-zsh
 applications_to_merge="$applications_to_merge xdotool"
-ln -s "$PWD/thirdparty/zsh-notify" ~/.oh-my-zsh/custom/plugin/notify
+ln -s "$PWD/thirdparty/zsh-notify" ~/.oh-my-zsh/custom/plugins/notify
+ln -s "$PWD/thirdparty/zsh-mkc" ~/.oh-my-zsh/custom/plugins/mkc
 
 # Install email, contacts
 sudo mkdir /var/spool/richi_mail

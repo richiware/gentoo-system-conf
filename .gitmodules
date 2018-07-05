@@ -62,3 +62,6 @@
 [submodule "thirdparty/email-conf"]
 	path = thirdparty/email-conf
 	url = https://github.com/richiware/email-conf.git
+[submodule "thirdparty/zsh-mkc"]
+	path = thirdparty/zsh-mkc
+	url = https://github.com/caarlos0/zsh-mkc.git
