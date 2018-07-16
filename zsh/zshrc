@@ -129,6 +129,8 @@ bindkey "^S" change_share_history_policy
 bindkey "^[OA" up-line-or-local-history
 # Down arrow
 bindkey "^[OB" down-line-or-local-history
+# Alternative to ESC to switch to normal vi mode.
+bindkey -M viins 'jj' vi-cmd-mode
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
