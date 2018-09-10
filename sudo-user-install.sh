@@ -51,7 +51,7 @@ ln -s "$PWD/thirdparty/vim-conf" ~/.vim
 mkdir -p ~/.config/nvim && ln -s "$PWD/thirdparty/vim-conf/init.vim" ~/.config/nvim/init.vim
 # Install vim plugin dependencies
 ## InstantRst -> install server
-pip install --user https://github.com/Rykka/instant-rst.py/archive/master.zip
+pip3 install --user https://github.com/Rykka/instant-rst.py/archive/master.zip
 # TODO install my changes on markdown viewer plugin
 
 # Install ranger file system manager.
@@ -119,6 +119,7 @@ ln -s "$PWD/thirdparty/email-conf/mutt/muttrc" ~/.muttrc
 ln -s "$PWD/thirdparty/email-conf/mutt/config" ~/.mutt
 ln -s "$PWD/thirdparty/email-conf/mutt/extract_urlview" ~/.extract_urlview
 ln -s "$PWD/thirdparty/email-conf/mutt/mutt-html-attach" ~/.local/bin/mutt-html-attach
+ln -s "$PWD/thirdparty/email-conf/mutt/mutt-save-attach" ~/.local/bin/mutt-save-attach
 
 #Show message about gnome-terminal-colors-solarized
 echo "Executing thirdparty/gnome-terminal-colors-solarized/install.sh ..."
@@ -129,7 +130,12 @@ sh -c "$PWD/thirdparty/gnome-terminal-colors-solarized/install.sh"
 # Install powerline
 echo 'Installing powerline...'
 read -t 10
-pip install --user powerline-status
+pip3 install --user powerline-status
+
+# Install draobpilc
+echo 'Installing draobpilc...'
+read -t 10
+pip3 install --user git+https://github.com/awamper/draobpilc
 
 # Install tmux configuration
 ln -s "$PWD/tmux/tmux.conf" ~/.tmux.conf
