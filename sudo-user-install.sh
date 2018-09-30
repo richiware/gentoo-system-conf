@@ -56,6 +56,7 @@ pip3 install --user https://github.com/Rykka/instant-rst.py/archive/master.zip
 
 # Install ranger file system manager.
 applications_to_merge="$applications_to_merge ranger"
+ln -s "$PWD/ranger" ~/.config/ranger
 
 # Install cron daemon to interrupt gpe12 for ssd disk in my toshiba.
 applications_to_merge="$applications_to_merge vixie-cron"
