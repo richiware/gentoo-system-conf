@@ -129,8 +129,8 @@ function sg()
 }
 
 # History search keys
-bindkey -M viins '^r' history-incremental-search-backward
-bindkey -M vicmd '^r' history-incremental-search-backward
+#bindkey -M viins '^r' fzf-history-widget
+bindkey -M vicmd '^r' fzf-history-widget
 bindkey '^H' vi-backward-char
 bindkey '^K' up-line-or-history
 bindkey '^J' down-line-or-history
