@@ -75,6 +75,9 @@ export EDITOR='nvim'
 
 # RICHI configuration
 
+# Sustitute oh-my-zsh's sudo alias for mine.
+alias _='sudo -E'
+
 # 256 color term
 if [[ "$TERM" == xterm* ]]; then
     export TERM=xterm-256color
@@ -156,3 +159,5 @@ zstyle ':notify:*' error-icon "/home/ricardo/.signs/virus.png"
 zstyle ':notify:*' error-title "Command failed"
 zstyle ':notify:*' success-icon "/home/ricardo/.signs/checked.png"
 zstyle ':notify:*' success-title "Command success"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
