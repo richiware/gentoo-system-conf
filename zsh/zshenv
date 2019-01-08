@@ -1,6 +1,9 @@
 # Aliases
-alias cmake='cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_FLAGS="-fdebug-prefix-map=\${CMAKE_BINARY_DIR}=."'
-alias ninja='ninja_exec() { ninja $*; cp compile_commands.json ../.. }; ninja_exec'
+alias cmake='cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_FLAGS="-fdebug-prefix-map=\${CMAKE_BINARY_DIR}="'
+alias ninja='ninja_exec() { ninja $*; if [ -f compile_commands.json ]; then cp compile_commands.json ../..; fi }; ninja_exec'
+alias colcon='colcon_exec() { colcon $*; \
+    jq -s add $(find . -iname compile_commands.json -print0 | grep -z . | xargs -0; test $pipestatus[2] -eq 0) > compile_commands.json && \
+    cp compile_commands.json ../.. }; colcon_exec'
 alias :q='exit'
 alias gpull='git pull --ff-only origin $(git_current_branch)'
 

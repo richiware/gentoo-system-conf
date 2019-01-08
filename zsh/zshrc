@@ -117,19 +117,26 @@ function down-line-or-local-history()
 }
 zle -N down-line-or-local-history
 
+# Special function to search text and show results usin FZF
 function sg()
 {
     search_prg=("ag" "--vimgrep")
     inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
 
     if [ "$inside_git_repo" ]; then
-        search_prg=("git" "grep" "-n" "--column")
+        search_prg=("git" "grep" "-n" "-i" "--column")
     fi
     grep_rv=`$search_prg "$1" | $(__fzfcmd_complete) -q "$1"`
     if [ "$grep_rv" ]; then
         echo $(awk '{split($0,a,":"); print "nvim",a[1],"-c","\"call cursor(\""a[2]","a[3]"\")\""}' <<< ${grep_rv}) | bash
     fi
 }
+
+# Git-foresta aliases
+function gifo() { git-foresta --style=10 "$@" | less -RSX }
+function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
+compdef _git gifo=git-log
+compdef _git gifa=git-log
 
 # History search keys
 #bindkey -M viins '^r' fzf-history-widget
