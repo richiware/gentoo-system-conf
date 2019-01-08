@@ -5,7 +5,7 @@ Before=cryptsetup-pre.target
 
 [Service]
 RemainAfterExit=no
-ExecStart=/bin/sh -c "if [ -e /dev/disk/by-uuid/03f35d4c-ffcc-45eb-8e4d-f8476da362c6 ]; then mkdir -p /mnt/key; mount -n -o ro /dev/disk/by-uuid/03f35d4c-ffcc-45eb-8e4d-f8476da362c6 /mnt/key || exit -1; else exit -1; fi; systemd-ask-password 'Password for HDD disk' | gpg --batch --passphrase-fd 0  -d /mnt/key/keys/hdddisk.gpg 2>/dev/null | cryptsetup luksOpen /dev/disk/by-uuid/48ca7e0b-5fec-4bd0-b14b-c9415de8eee4 crypthdd; umount -l /mnt/key 2>/dev/null >/dev/null && rmdir /mnt/key 2>/dev/null >/dev/null"
+ExecStart=/bin/sh -c "if [ -e /dev/disk/by-uuid/03f35d4c-ffcc-45eb-8e4d-f8476da362c6 ] || [ -e /dev/disk/by-uuid/1fda70f7-a9fb-4616-815d-38d8d3f93b26 ] ; then mkdir -p /mnt/key; mount -n -o ro /dev/disk/by-uuid/03f35d4c-ffcc-45eb-8e4d-f8476da362c6 /mnt/key || mount -n -o ro /dev/disk/by-uuid/1fda70f7-a9fb-4616-815d-38d8d3f93b26 /mnt/key || exit -1; else exit -1; fi; systemd-ask-password 'Password for HDD disk' | gpg --batch --passphrase-fd 0  -d /mnt/key/keys/hdddisk.gpg 2>/dev/null | cryptsetup luksOpen /dev/disk/by-uuid/48ca7e0b-5fec-4bd0-b14b-c9415de8eee4 crypthdd; umount -l /mnt/key 2>/dev/null >/dev/null && rmdir /mnt/key 2>/dev/null >/dev/null"
 
 [Install]
 WantedBy=sysinit.target
