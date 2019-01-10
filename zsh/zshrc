@@ -150,6 +150,7 @@ bindkey '^N' down-history
 bindkey "^?" backward-delete-char
 bindkey "^W" backward-kill-word
 bindkey "^U" kill-line
+bindkey "^q" push-line-or-edit
 # Ctrl+S to change share history policy
 bindkey "^S" change_share_history_policy
 # Up arrow
