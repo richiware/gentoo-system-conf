@@ -13,6 +13,7 @@ alias colcon='colcon_exec() { \
     cp compile_commands.json ../.. }; colcon_exec'
 alias :q='exit'
 alias gpull='git pull --ff-only origin $(git_current_branch)'
+alias tws='tws_exec() {task description.contains=$*}; tws_exec'
 
 # CCache
 emulate -R bash -c 'source /usr/local/bin/tmpfs-ccache-user.sh'
