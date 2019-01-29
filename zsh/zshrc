@@ -126,7 +126,7 @@ function sg()
     if [ "$inside_git_repo" ]; then
         search_prg=("git" "grep" "-n" "-i" "--column")
     fi
-    grep_rv=`$search_prg "$1" | $(__fzfcmd_complete) -q "$1"`
+    grep_rv=`$search_prg "$1" "$2" | $(__fzfcmd_complete)`
     if [ "$grep_rv" ]; then
         echo $(awk '{split($0,a,":"); print "nvim",a[1],"-c","\"call cursor(\""a[2]","a[3]"\")\""}' <<< ${grep_rv}) | bash
     fi
