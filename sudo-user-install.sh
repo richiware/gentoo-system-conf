@@ -171,6 +171,7 @@ sudo emerge -va $applications_to_merge
 
 # Execute taskwarrior to create config file
 echo "Creating configuration for taskwarrior..."
+cp "$PWD/taskwarrior/taskrc" ~/.taskrc
 read -t 10
 task list
 
