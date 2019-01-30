@@ -65,3 +65,6 @@
 [submodule "thirdparty/zsh-mkc"]
 	path = thirdparty/zsh-mkc
 	url = https://github.com/caarlos0/zsh-mkc.git
+[submodule "thirdparty/timewarrior-indicator"]
+	path = thirdparty/timewarrior-indicator
+	url = https://github.com/tassos/timewarrior-indicator.git

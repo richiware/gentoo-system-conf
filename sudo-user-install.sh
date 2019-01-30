@@ -44,8 +44,18 @@ sudo cp "$PWD/thirdparty/squash-portage/squash-portage.sh" /usr/local/bin/
 #TODO Layman
 #TODO My local portage
 
+# Install git-foresta
+#curl -L https://github.com/takaaki-kasai/git-foresta/raw/master/git-foresta -o ~/.local/bin/git-foresta && chmod +x ~/.local/bin/git-foresta
+
+# Install jq. Used in zshenv.
+# Insntall fonts dejavu y inconsolata
+# emerge sphinxcontrib-spelling for check document spelling.
+# gem install mdl  # Installl mardownlinter
+# emerge doc8 # RST checker
+
+
 # Install neovim and application needed for its plugins.
-applications_to_merge="$applications_to_merge neovim zathura texlive"
+applications_to_merge="$applications_to_merge neovim zathura texlive clang"
 # Install vim files
 ln -s "$PWD/thirdparty/vim-conf" ~/.vim
 mkdir -p ~/.config/nvim && ln -s "$PWD/thirdparty/vim-conf/init.vim" ~/.config/nvim/init.vim
@@ -65,6 +75,8 @@ applications_to_merge="$applications_to_merge vixie-cron"
 # GNOME Extensions
 ## Install taskwhisperer gnome extension
 ln -s "$PWD/thirdparty/taskwhisperer" ~/.local/share/gnome-shell/extensions/taskwhisperer-extension@infinicode.de
+## Install timewarrior gnome extension
+ln -s "$PWD/thirdparty/timewarrior-indicator" ~/.local/share/gnome-shell/extensions/timewarrior-indicator@natsakis.com
 ## Install remove arrow gnome extension
 ln -s "$PWD/thirdparty/gnome-shell-remove-dropdown-arrows" ~/.local/share/gnome-shell/extensions/remove-dropdown-arrows@mpdeimos.com
 ## Install text translator gnome extension
@@ -99,7 +111,8 @@ ln -s "$PWD/thirdparty/email-conf/khard/khard.conf" ~/.config/khard/khard.conf
 applications_to_merge="$applications_to_merge offlineimap keyring"
 ln -s "$PWD/thirdparty/email-conf/offlineimap/offlineimaprc" ~/.offlineimaprc
 mkdir ~/.mail/offlineimap
-ln -s "$PWD/thirdparty/email-conf/offlineimap/gnome-keyring-query.py" ~/.mail/offlineimap/gnome-keyring-query.py
+mkdir ~/.offlineimap
+ln -s "$PWD/thirdparty/email-conf/offlineimap/hooks" ~/.offlineimap/hooks
 sudo cp "$PWD/thirdparty/email-conf/offlineimap/offlineimap-oneshot.*" /etc/systemd/user
 systemctl --user enable offlineimap-oneshot.timer
 ## Install notmuch
@@ -113,14 +126,17 @@ ln -s "$PWD/thirdparty/email-conf/notmuch/hooks" ~/.mail/mail/.notmuch/hooks
 applications_to_merge="$applications_to_merge msmtp"
 ln -s "$PWD/thirdparty/email-conf/msmtp/msmtprc" ~/.msmtprc
 ## Install mutt
-applications_to_merge="$applications_to_merge mutt muttprint t-prot w3m extract_url"
+applications_to_merge="$applications_to_merge mutt muttprint dialog t-prot w3m extract_url"
 mkdir ~/.mail/cache/headers
 mkdir ~/.mail/cache/bodies
 ln -s "$PWD/thirdparty/email-conf/mutt/muttrc" ~/.muttrc
+ln -s "$PWD/thirdparty/email-conf/mutt/mailboxes" ~/.mailboxes
 ln -s "$PWD/thirdparty/email-conf/mutt/config" ~/.mutt
 ln -s "$PWD/thirdparty/email-conf/mutt/extract_urlview" ~/.extract_urlview
 ln -s "$PWD/thirdparty/email-conf/mutt/mutt-html-attach" ~/.local/bin/mutt-html-attach
 ln -s "$PWD/thirdparty/email-conf/mutt/mutt-save-attach" ~/.local/bin/mutt-save-attach
+ln -s "$PWD/thirdparty/email-conf/mutt/mutt-ranger-attach" ~/.local/bin/mutt-ranger-attach
+ln -s "$PWD/thirdparty/email-conf/mutt/mutt-view-mail" ~/.local/bin/mutt-view-mail
 
 #Show message about gnome-terminal-colors-solarized
 echo "Executing thirdparty/gnome-terminal-colors-solarized/install.sh ..."
@@ -170,7 +186,7 @@ sudo crontab -u $USER -e
 
 # Install taskwarrior hook
 # TODO Remove?
-cp "$PWD/thirdparty/taskwarrior-hamster-hook/on-modify.hamster" ~/.task/hooks/
+# Until hamster wokrs again. cp "$PWD/thirdparty/taskwarrior-hamster-hook/on-modify.hamster" ~/.task/hooks/
 # Install redminetimesync
 cp "$PWD/thirdparty/redminetimesync/activities.config.tpl" "$PWD/thirdparty/redminetimesync/activities.config"
 cp "$PWD/thirdparty/redminetimesync/redminetimesync.config.tpl" "$PWD/thirdparty/redminetimesync/redminetimesync.config"
