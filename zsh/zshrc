@@ -132,6 +132,14 @@ function sg()
     fi
 }
 
+function sga()
+{
+    grep_rv=`ag --vimgrep "$1" "$2" | $(__fzfcmd_complete)`
+    if [ "$grep_rv" ]; then
+        echo $(awk '{split($0,a,":"); print "nvim",a[1],"-c","\"call cursor(\""a[2]","a[3]"\")\""}' <<< ${grep_rv}) | bash
+    fi
+}
+
 # Git-foresta aliases
 function gifo() { git-foresta --style=10 "$@" | less -RSX }
 function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
