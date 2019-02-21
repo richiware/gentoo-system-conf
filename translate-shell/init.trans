@@ -1,6 +1,6 @@
 {
  :verbose         false
- :engine          "deepl"
+ :engine          "google"
  :hl              "en"
  :tl              "es"
 }
