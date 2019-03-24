@@ -68,3 +68,15 @@
 [submodule "thirdparty/timewarrior-indicator"]
 	path = thirdparty/timewarrior-indicator
 	url = https://github.com/tassos/timewarrior-indicator.git
+[submodule "thirdparty/gistnotes"]
+	path = thirdparty/gistnotes
+	url = https://github.com/mohan43u/gistnotes.git
+[submodule "thirdparty/RandomWallpaperGnome3"]
+	path = thirdparty/RandomWallpaperGnome3
+	url = https://github.com/ifl0w/RandomWallpaperGnome3
+[submodule "thirdparty/tracker-search-provider"]
+	path = thirdparty/tracker-search-provider
+	url = https://github.com/hamiller/tracker-search-provider.git
+[submodule "thirdparty/vim-key-mapping"]
+	path = thirdparty/vim-key-mapping
+	url = https://github.com/richiware/gnome-shell-extension-vim-key-mapping.git

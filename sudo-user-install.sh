@@ -79,6 +79,14 @@ ln -s "$PWD/thirdparty/taskwhisperer" ~/.local/share/gnome-shell/extensions/task
 ln -s "$PWD/thirdparty/timewarrior-indicator" ~/.local/share/gnome-shell/extensions/timewarrior-indicator@natsakis.com
 ## Install remove arrow gnome extension
 ln -s "$PWD/thirdparty/gnome-shell-remove-dropdown-arrows" ~/.local/share/gnome-shell/extensions/remove-dropdown-arrows@mpdeimos.com
+## Install gistnotes gnome extension
+ln -s "$PWD/thirdparty/gistnotes" ~/.local/share/gnome-shell/extensions/gistnotes@mohan43u.gmail.com
+## Install random wallpaper gnome extension
+ln -s "$PWD/thirdparty/RandomWallpaperGnome3" ~/.local/share/gnome-shell/extensions/randomwallpaper@iflow.space
+## Install tracker search gnome extension
+ln -s "$PWD/thirdparty/tracker-search-provider" ~/.local/share/gnome-shell/extensions/tracker-search-provider@sinnix.de
+## Install my vim key mapping  gnome extension
+ln -s "$PWD/thirdparty/vim-key-mapping" ~/.local/share/gnome-shell/extensions/vim-key-mapping@richiware.github.com
 ## Install text translator gnome extension
 applications_to_merge="$applications_to_merge translate-shell"
 ln -s "$PWD/translate-shell" ~/.config/translate-shell
