@@ -82,7 +82,7 @@ ln -s "$PWD/thirdparty/gnome-shell-remove-dropdown-arrows" ~/.local/share/gnome-
 ## Install gistnotes gnome extension
 ln -s "$PWD/thirdparty/gistnotes" ~/.local/share/gnome-shell/extensions/gistnotes@mohan43u.gmail.com
 ## Install random wallpaper gnome extension
-ln -s "$PWD/thirdparty/RandomWallpaperGnome3" ~/.local/share/gnome-shell/extensions/randomwallpaper@iflow.space
+ln -s "$PWD/thirdparty/RandomWallpaperGnome3/randomwallpaper@iflow.space" ~/.local/share/gnome-shell/extensions/randomwallpaper@iflow.space
 ## Install tracker search gnome extension
 ln -s "$PWD/thirdparty/tracker-search-provider" ~/.local/share/gnome-shell/extensions/tracker-search-provider@sinnix.de
 ## Install my vim key mapping  gnome extension
