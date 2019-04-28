@@ -99,6 +99,8 @@ ln -s "$PWD/thirdparty/gnome3-jenkins-indicator" ~/.local/share/gnome-shell/exte
 applications_to_merge="$applications_to_merge xdotool"
 ln -s "$PWD/thirdparty/zsh-notify" ~/.oh-my-zsh/custom/plugins/notify
 ln -s "$PWD/thirdparty/zsh-mkc" ~/.oh-my-zsh/custom/plugins/mkc
+# Install my theme
+ln -s "$PWD/zsh/richiware.zsh-theme" ~/.oh-my-zsh/custom/themes
 
 # Install email, contacts
 sudo mkdir /var/spool/richi_mail

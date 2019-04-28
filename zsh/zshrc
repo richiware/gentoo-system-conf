@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="agnoster"
-ZSH_THEME="blinks-richi"
+ZSH_THEME="richiware"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -117,6 +117,13 @@ function down-line-or-local-history()
     zle set-local-history 0
 }
 zle -N down-line-or-local-history
+
+# Update prompt (date) when execute a command
+function _reset-prompt-and-accept-line {
+  zle reset-prompt
+  zle .accept-line     # Note the . meaning the built-in accept-line.
+}
+zle -N accept-line _reset-prompt-and-accept-line
 
 # Special function to search text and show results usin FZF
 function sg()
