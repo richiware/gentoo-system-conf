@@ -116,6 +116,9 @@ systemctl --user enable vdirsyncer.timer
 ## Install khard
 applications_to_merge="$applications_to_merge khard"
 mkdir ~/.config/khard/
+ln -s "$PWD/thirdparty/email-conf/khal/config" ~/.config/khal/config
+## Install khal
+mkdir ~/.config/khal/
 ln -s "$PWD/thirdparty/email-conf/khard/khard.conf" ~/.config/khard/khard.conf
 ## Install offlineimap
 applications_to_merge="$applications_to_merge offlineimap keyring"
