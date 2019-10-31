@@ -7,11 +7,6 @@ if [ -z "$(ls -A $PWD/thirdparty)" ]; then
     exit -1
 fi
 
-if [[ -d ~/.vim ]]; then
-    echo "~/.vim directory already exists"
-    exit -1
-fi
-
 # Make sure user has sudo privilages.
 sudo echo
 if [[ $? -ne 0 ]]; then
@@ -70,29 +65,6 @@ ln -s "$PWD/ranger" ~/.config/ranger
 
 # Install cron daemon to interrupt gpe12 for ssd disk in my toshiba.
 applications_to_merge="$applications_to_merge vixie-cron"
-
-#TODO Gnomeshell extensions
-# GNOME Extensions
-## Install taskwhisperer gnome extension
-ln -s "$PWD/thirdparty/taskwhisperer" ~/.local/share/gnome-shell/extensions/taskwhisperer-extension@infinicode.de
-## Install timewarrior gnome extension
-ln -s "$PWD/thirdparty/timewarrior-indicator" ~/.local/share/gnome-shell/extensions/timewarrior-indicator@natsakis.com
-## Install remove arrow gnome extension
-ln -s "$PWD/thirdparty/gnome-shell-remove-dropdown-arrows" ~/.local/share/gnome-shell/extensions/remove-dropdown-arrows@mpdeimos.com
-## Install gistnotes gnome extension
-ln -s "$PWD/thirdparty/gistnotes" ~/.local/share/gnome-shell/extensions/gistnotes@mohan43u.gmail.com
-## Install random wallpaper gnome extension
-ln -s "$PWD/thirdparty/RandomWallpaperGnome3/randomwallpaper@iflow.space" ~/.local/share/gnome-shell/extensions/randomwallpaper@iflow.space
-## Install tracker search gnome extension
-ln -s "$PWD/thirdparty/tracker-search-provider" ~/.local/share/gnome-shell/extensions/tracker-search-provider@sinnix.de
-## Install my vim key mapping  gnome extension
-ln -s "$PWD/thirdparty/vim-key-mapping" ~/.local/share/gnome-shell/extensions/vim-key-mapping@richiware.github.com
-## Install text translator gnome extension
-applications_to_merge="$applications_to_merge translate-shell"
-ln -s "$PWD/translate-shell" ~/.config/translate-shell
-ln -s "$PWD/thirdparty/text-translator" ~/.local/share/gnome-shell/extensions/text_translator@awamper.gmail.com
-## Install jenkins indicator gnome extension
-ln -s "$PWD/thirdparty/gnome3-jenkins-indicator" ~/.local/share/gnome-shell/extensions/jenkins-indicator@philipphoffmann.de
 
 # Install oh-my-zsh and zsh-notify plugin
 # TODO Install oh-my-zsh
@@ -168,7 +140,6 @@ read -t 10
 pip3 install --user git+https://github.com/awamper/draobpilc
 
 # Install tmux configuration
-ln -s "$PWD/tmux/tmux.conf" ~/.tmux.conf
 ln -s "$PWD/tmux/tmux.desktop" ~/.local/share/applications/tmux.desktop
 mkdir -p ~/.config/powerline/themes/tmux
 ln -s "$PWD/tmux/default.json" ~/.config/powerline/themes/tmux/
@@ -207,6 +178,19 @@ cp "$PWD/thirdparty/redminetimesync/redminetimesync.config.tpl" "$PWD/thirdparty
 echo "Include redmine key in redminetimesync.config ..."
 read -t 10
 nvim "$PWD/thirdparty/redminetimesync/redminetimesync.config"
+
+# Install IM
+applications_to_merge="$applications_to_merge purple-hangouts bitlbee weechat"
+# Execute weechat
+# Connect to the server: /server add bitlbee localhost/6667 -autoconnect
+# Connect: /connect bitlbee
+# In bitlbe channel register password: register <password>
+# In weechat channel: /set irc.server.bitlbee.command "/msg &bitlbee identify <password>"
+# Hangout
+## > account add hangouts <email>
+## > /OPER hangouts <gmail password>
+## > account <email> on
+## Follow https://github.com/tdryer/hangups/issues/260#issuecomment-246578670
 
 #Show message about crontab and interrupt gpe12
 echo 'Execute "crontab -e" and add next line:'

@@ -18,16 +18,6 @@
     url = https://github.com/powerline/powerline.git
     branch = master
     shallow = true
-[submodule "thirdparty/vim-conf"]
-    path = thirdparty/vim-conf
-    url = https://github.com/richiware/vim-conf.git
-    branch = master
-    shallow = true
-[submodule "thirdparty/taskwhisperer"]
-    path = thirdparty/taskwhisperer
-    url = https://github.com/cinatic/taskwhisperer.git
-    branch = master
-    shallow = true
 [submodule "thirdparty/redminetimesync"]
     path = thirdparty/redminetimesync
     url = https://github.com/richiware/redminetimesync.git
@@ -43,40 +33,15 @@
     url = https://github.com/mpdeimos/gnome-shell-remove-dropdown-arrows.git
     branch = master
     shallow = true
-[submodule "thirdparty/text-translator"]
-    path = thirdparty/text-translator
-    url = https://github.com/gufoe/text-translator.git
-    branch = master
-    shallow = true
-[submodule "thirdparty/gnome3-jenkins-indicator"]
-    path = thirdparty/gnome3-jenkins-indicator
-    url = https://github.com/philipphoffmann/gnome3-jenkins-indicator.git
-    branch = master
-    shallow = true
 [submodule "thirdparty/zsh-notify"]
-	path = thirdparty/zsh-notify
-	url = https://github.com/richiware/zsh-notify.git
+    path = thirdparty/zsh-notify
+    url = https://github.com/richiware/zsh-notify.git
 [submodule "thirdparty/gmail-oauth2-tools"]
-	path = thirdparty/gmail-oauth2-tools
-	url = https://github.com/google/gmail-oauth2-tools
+    path = thirdparty/gmail-oauth2-tools
+    url = https://github.com/google/gmail-oauth2-tools
 [submodule "thirdparty/email-conf"]
-	path = thirdparty/email-conf
-	url = https://github.com/richiware/email-conf.git
+    path = thirdparty/email-conf
+    url = https://github.com/richiware/email-conf.git
 [submodule "thirdparty/zsh-mkc"]
-	path = thirdparty/zsh-mkc
-	url = https://github.com/caarlos0/zsh-mkc.git
-[submodule "thirdparty/timewarrior-indicator"]
-	path = thirdparty/timewarrior-indicator
-	url = https://github.com/tassos/timewarrior-indicator.git
-[submodule "thirdparty/gistnotes"]
-	path = thirdparty/gistnotes
-	url = https://github.com/mohan43u/gistnotes.git
-[submodule "thirdparty/RandomWallpaperGnome3"]
-	path = thirdparty/RandomWallpaperGnome3
-	url = https://github.com/ifl0w/RandomWallpaperGnome3
-[submodule "thirdparty/tracker-search-provider"]
-	path = thirdparty/tracker-search-provider
-	url = https://github.com/hamiller/tracker-search-provider.git
-[submodule "thirdparty/vim-key-mapping"]
-	path = thirdparty/vim-key-mapping
-	url = https://github.com/richiware/gnome-shell-extension-vim-key-mapping.git
+    path = thirdparty/zsh-mkc
+    url = https://github.com/caarlos0/zsh-mkc.git
